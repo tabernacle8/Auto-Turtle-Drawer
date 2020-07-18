@@ -1,4 +1,4 @@
-# import the pygame module, so you can use it
+# Import the pygame module, so you can use it
 import pygame
 from pygame import *
 import sys, random, math, fractions
@@ -6,27 +6,27 @@ import sys, random, math, fractions
 
 
 f = open("result.txt", "w")
-# define a main function
+# Define a main function
 def main():
      
-    # initialize the pygame module
+    # Initialize the pygame module
     pygame.init()
-    # load and set the logo
+    # Load and set the logo
     #logo = pygame.image.load("logo32x32.png")
     #pygame.display.set_icon(logo)
-    pygame.display.set_caption("Carters Converter")
+    pygame.display.set_caption("Taber's Converter")
     
-    # create a surface on screen that has the size of 240 x 180
+    # Create a surface on screen that has the size of 500 x 500
     screen = pygame.display.set_mode((500,500))
      
-    # define a variable to control the main loop
+    # Define a variable to control the main loop
     running = True
      
 
 
     x_vals = [0]
     y_vals = [0]
-    # main loop
+    # Main loop
     timer = 0
     while running:
        
@@ -36,7 +36,6 @@ def main():
         color = (0,255,0)
 
         buttonDown = pygame.mouse.get_pressed()[0]
-            # only do something if the event is of type QUIT
 
         timer = timer+1
         if buttonDown and timer%20==0:
@@ -70,8 +69,7 @@ def main():
         pygame.display.update()
      
      
-# run the main function only if this module is executed as the main script
-# (if you import this as a module then nothing is executed)
+
 if __name__=="__main__":
-    # call the main function
+    # Run
     main()

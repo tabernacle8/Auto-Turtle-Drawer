@@ -1,6 +1,6 @@
 import turtle
 turtle.speed(100000000)
 
-#For Testing your creations
+#For testing your creations
 
 turtle.done()
