@@ -16,3 +16,8 @@ B: Blue
 Y: Yellow
 G: Green
 D: Black (Default)
+
+## HD Mode
+
+Press h key to toggle HD Mode
+(Draws lines with better AA. Doubles draw time)

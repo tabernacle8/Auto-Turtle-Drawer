@@ -30,6 +30,7 @@ def changeColor(newcolor):
 
 # Define a main function
 def main():
+    hdMode = False
     changeColor("default")
      
     # Initialize the pygame module
@@ -82,6 +83,14 @@ def main():
 
                 if event.key == pygame.K_d:
                     changeColor("black")
+
+                if event.key == pygame.K_h:
+                    if(hdMode):
+                        pygame.display.set_caption("HD Mode disabled")
+                        hdMode = False
+                    else:
+                        hdMode = True
+                        pygame.display.set_caption("HD Mode enabled")
                    
 
 
@@ -97,10 +106,19 @@ def main():
                     if(isinstance(x_vals[index], str)):
                         f.write("turtle.color(\""+x_vals[index]+"\");")
                     else:
-                        f.write("turtle.penup();")
-                        f.write("turtle.goto("+str(x_vals[index]-170)+","+str((y_vals[index]-300)*-1)+");")
-                        f.write("turtle.pendown();")
-                        f.write("turtle.circle(1)\n")
+
+                        if(hdMode):
+                            f.write("turtle.begin_fill();")
+                            f.write("turtle.penup();")
+                            f.write("turtle.goto("+str(x_vals[index]-170)+","+str((y_vals[index]-300)*-1)+");")
+                            f.write("turtle.pendown();")
+                            f.write("turtle.circle(3)\n")
+                            f.write("turtle.end_fill();")
+                        else:
+                            f.write("turtle.penup();")
+                            f.write("turtle.goto("+str(x_vals[index]-170)+","+str((y_vals[index]-300)*-1)+");")
+                            f.write("turtle.pendown();")
+                            f.write("turtle.circle(1)\n")
                     index = index+1
             
         index = 0
