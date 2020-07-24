@@ -4,6 +4,8 @@ from pygame import *
 import sys, random, math, fractions
 #import filereader
 
+windowSize = (500,500)
+
      
 x_vals = []
 y_vals = []
@@ -60,7 +62,7 @@ def main():
     pygame.display.set_caption("Taber's PyDraw")
     
     # Create a surface on screen that has the size of 500 x 500
-    screen = pygame.display.set_mode((500,500))
+    screen = pygame.display.set_mode(windowSize)
      
     # Define a variable to control the main loop
     running = True

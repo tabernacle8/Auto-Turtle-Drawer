@@ -6,6 +6,8 @@ Now it can be fun! Just run index.py and draw whatever you like. The converter w
 
 Focus on what's important in programming, don't worry about turtle.
 
+Change the window size (Canvass) By changing the variable at the top of index.py
+
 
 ## Change Color
 
