@@ -21,6 +21,14 @@ D: Black (Default)
 
 Press "E" to toggle delete mode
 
+## Make a Square
+
+If you would like the square to be filled, toggle FillMode by pressing 3
+
+Press 1 to set the first corner
+Press 2 to set the second corner
+Done!
+
 ## HD Mode
 
 Press h key to toggle HD Mode
