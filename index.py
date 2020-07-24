@@ -177,6 +177,7 @@ def main():
 
 
             if event.type==QUIT:
+                print("Bye bye!")
                 pygame.quit()
 
             if(event.type == pygame.MOUSEBUTTONDOWN and event.button==2):
