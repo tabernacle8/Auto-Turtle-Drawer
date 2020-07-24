@@ -10,6 +10,20 @@ y_vals = []
 
 f = open("result.txt", "w")
 
+def deleteCord(x, y, buffer):
+    print(str(x)+":"+str(y))
+    index = 0
+    for xint in x_vals:
+ 
+        if(not(isinstance(x_vals[index], str)) and not(isinstance(y_vals[index], str))):
+
+            if( abs(xint-x) < buffer and abs(y_vals[index]-y) < buffer):
+
+                del x_vals[index]
+                del y_vals[index]
+
+        index = index+1
+
 
 def resolveColor(color):
     if(color =="green"):
@@ -31,6 +45,7 @@ def changeColor(newcolor):
 # Define a main function
 def main():
     hdMode = False
+    delete = False
     changeColor("default")
      
     # Initialize the pygame module
@@ -60,10 +75,14 @@ def main():
         timer = timer+1
         if buttonDown and timer%20==0:
 
-            
-            pos = pygame.mouse.get_pos()
-            x_vals.append(pos[0])
-            y_vals.append(pos[1])
+            if delete:
+                pos = pygame.mouse.get_pos()
+                deleteCord(pos[0],pos[1],10)
+
+            else:
+                pos = pygame.mouse.get_pos()
+                x_vals.append(pos[0])
+                y_vals.append(pos[1])
 
 
         for event in pygame.event.get():
@@ -83,6 +102,15 @@ def main():
 
                 if event.key == pygame.K_d:
                     changeColor("black")
+                
+                if event.key == pygame.K_e:
+                    if(delete):
+                        pygame.display.set_caption("Erase mode disabled")
+                        delete = False
+                    else:
+                        delete = True
+                        pygame.display.set_caption("Erase mode enabled")
+                   
 
                 if event.key == pygame.K_h:
                     if(hdMode):
@@ -126,6 +154,10 @@ def main():
         while (index<len(x_vals)):
             if(not(isinstance(x_vals[index], str))):
                 pygame.draw.circle(screen, currentColor, [x_vals[index],y_vals[index]], 5, 0)
+
+                if delete:
+                    pos = pygame.mouse.get_pos()
+                    pygame.draw.circle(screen, (255,0,0), [pos[0],pos[1]], 10, 1)
             else:
                 currentColor = resolveColor(x_vals[index])
             index = index+1

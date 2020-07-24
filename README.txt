@@ -17,6 +17,10 @@ Y: Yellow
 G: Green
 D: Black (Default)
 
+## Delete Mode
+
+Press "E" to toggle delete mode
+
 ## HD Mode
 
 Press h key to toggle HD Mode
