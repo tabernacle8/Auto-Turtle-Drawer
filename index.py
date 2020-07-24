@@ -11,7 +11,6 @@ y_vals = []
 f = open("result.txt", "w")
 
 def deleteCord(x, y, buffer):
-    print(str(x)+":"+str(y))
     index = 0
     for xint in x_vals:
  
