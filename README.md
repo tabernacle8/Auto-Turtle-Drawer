@@ -8,7 +8,7 @@ Focus on what's important in programming, don't worry about turtle.
 
 Change the window size (Canvass) By changing the variable at the top of index.py
 
-##To finalise and save your drawing, click the middle mouse button
+## To finalize and save your drawing, click the middle mouse button
 
 
 ## Change Color
